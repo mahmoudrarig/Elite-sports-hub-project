@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details</title>
+
+    <link rel="stylesheet" href="./product.css">
+    <link rel="stylesheet" href="../Theme/theme.css">
+</head>
+
+<body>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>Elite<span class="blue">Sports</span></span>
+        </div>
+
+        <nav class="navLinks">
+            <a href="../Home Page/Home.html">Home</a>
+            <a href="../About Page/About.html">About</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="../review system/reviewsystem 1.html">Reviews</a>
+            <a href="../team view/team.html">Team</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="cart.html" class="cart-link">
+                🛒 Cart (<span id="cartCount">0</span>)
+            </a>
+
+            <a href="saved.html" class="saved-link">
+                🔖 Saved (<span id="savedCount">0</span>)
+            </a>
+
+        </div>
+
+    </header>
+
+    <main class="product-page">
+
+        <!-- Product Image -->
+
+        <div class="product-image-area">
+
+            <img
+                id="productImage"
+                src=""
+                alt="Product image"
+            >
+
+        </div>
+
+
+        <!-- Product Information -->
+
+        <div class="product-details">
+
+            <p id="productCategory" class="category"></p>
+
+            <h1 id="productName"></h1>
+
+            <h2 id="productPrice"></h2>
+
+            <p id="productDescription"></p>
+
+
+            <!-- Quantity -->
+
+            <div class="purchase-options">
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <select id="quantity">
+
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Product Buttons -->
+
+            <div class="product-actions">
+
+                <button
+                    id="addToCart"
+                    class="cart-button"
+                    type="button"
+                >
+                    Add to Cart
+                </button>
+
+                <button
+                    id="buyNow"
+                    class="buy-button"
+                    type="button"
+                >
+                    Buy Now
+                </button>
+
+                <button
+                    id="saveLater"
+                    class="save-button"
+                    type="button"
+                >
+                    Save for Later
+                </button>
+
+            </div>
+
+
+            <!-- Action Message -->
+
+            <p
+                id="actionMessage"
+                class="action-message"
+            ></p>
+
+
+            <!-- Review Button -->
+
+            <button
+                type="button"
+                id="openReviewModal"
+                class="review-button"
+            >
+                Write a Review
+            </button>
+
+
+            <!-- Back Button -->
+
+            <a
+                href="catalogue.html"
+                class="back-button"
+            >
+                ← Back to Catalogue
+            </a>
+
+        </div>
+
+    </main>
+
+    <div
+        class="review-modal"
+        id="reviewModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="reviewModalTitle"
+    >
+
+        <div class="review-modal-card">
+
+            <!-- Close Button -->
+
+            <button
+                type="button"
+                class="review-modal-close"
+                id="closeReviewModal"
+                aria-label="Close review popup"
+            >
+                &times;
+            </button>
+
+
+            <h2 id="reviewModalTitle">
+                Leave a Product Review
+            </h2>
+
+            <p class="review-modal-intro">
+                Share your experience with other customers.
+            </p>
+
+
+            <div class="review-modal-layout">
+
+
+                <!-- Product Preview -->
+
+                <div class="review-product-preview">
+
+                    <img
+                        id="reviewProductImage"
+                        src=""
+                        alt="Product being reviewed"
+                    >
+
+                    <h3 id="reviewProductName"></h3>
+
+                </div>
+
+
+                <!-- Review Form -->
+
+                <form
+                    id="productReviewForm"
+                    class="product-review-form"
+                >
+
+                    <span id="popupRatingLabel">
+                        <strong>Your rating</strong>
+                    </span>
+
+
+                    <!-- Star Rating -->
+
+                    <div
+                        class="popup-star-rating"
+                        role="radiogroup"
+                        aria-labelledby="popupRatingLabel"
+                    >
+
+                        <input
+                            type="radio"
+                            id="popupStar5"
+                            name="productRating"
+                            value="5"
+                            required
+                        >
+
+                        <label
+                            for="popupStar5"
+                            title="Excellent"
+                        >
+                            &#9733;
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            id="popupStar4"
+                            name="productRating"
+                            value="4"
+                        >
+
+                        <label
+                            for="popupStar4"
+                            title="Very good"
+                        >
+                            &#9733;
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            id="popupStar3"
+                            name="productRating"
+                            value="3"
+                        >
+
+                        <label
+                            for="popupStar3"
+                            title="Good"
+                        >
+                            &#9733;
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            id="popupStar2"
+                            name="productRating"
+                            value="2"
+                        >
+
+                        <label
+                            for="popupStar2"
+                            title="Fair"
+                        >
+                            &#9733;
+                        </label>
+
+
+                        <input
+                            type="radio"
+                            id="popupStar1"
+                            name="productRating"
+                            value="1"
+                        >
+
+                        <label
+                            for="popupStar1"
+                            title="Poor"
+                        >
+                            &#9733;
+                        </label>
+
+                    </div>
+
+
+                    <p
+                        class="popup-rating-message"
+                        id="popupRatingMessage"
+                    >
+                        Select a star rating
+                    </p>
+
+
+                    <!-- Review Text -->
+
+                    <label for="productReviewText">
+                        Your review
+                    </label>
+
+                    <textarea
+                        id="productReviewText"
+                        placeholder="Tell other customers what you liked or disliked..."
+                        required
+                    ></textarea>
+
+
+                    <!-- Submit Review -->
+
+                    <button
+                        type="submit"
+                        class="submit-product-review"
+                    >
+                        Submit Review
+                    </button>
+
+
+                    <p
+                        class="review-success-message"
+                        id="reviewSuccessMessage"
+                        role="status"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+ 
+
+    <button
+        id="themeToggleBtn"
+        class="theme-toggle-btn"
+        type="button"
+        aria-label="Toggle Dark/Light Mode"
+    >
+        <span id="themeIcon">🌙</span>
+        <span id="themeText">Dark</span>
+    </button>
+
+
+
+    
+ <script src="product.js"></script>
+<script src="../Theme/theme.js"></script>
+
+</body>
+</html>
