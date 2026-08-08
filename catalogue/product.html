@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details</title>
+
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="../Theme/theme.css">
+</head>
+
+<body>
+
+   <header class="navbar">
+
+    <div class="logo">
+        <span>Elite<span class="blue">Sports</span></span>
+    </div>
+
+    <nav class="navLinks">
+        <a href="../Home Page/Home.html">Home</a>
+        <a href="../About Page/About.html">About</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="../review system/reviewsystem 1.html">Reviews</a>
+        <a href="../team view/team.html">Team</a>
+    </nav>
+    <button id="themeToggleBtn" class="theme-toggle-btn">
+    🌙 Dark
+</button>
+
+    <div class="nav-actions">
+
+    <a href="cart.html" class="cart-link">
+        🛒 Cart (<span id="cartCount">0</span>)
+    </a>
+
+    <a href="saved.html" class="saved-link">
+        🔖 Saved (<span id="savedCount">0</span>)
+    </a>
+
+</div>
+
+</header>
+
+
+    <main class="product-page">
+
+        <div class="product-image-area">
+            <img id="productImage" src="" alt="">
+        </div>
+
+
+        <div class="product-details">
+
+            <p id="productCategory" class="category"></p>
+
+            <h1 id="productName"></h1>
+
+            <h2 id="productPrice"></h2>
+
+            <p id="productDescription"></p>
+
+            <div class="purchase-options">
+
+    <label for="quantity">Quantity</label>
+
+    <select id="quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+</div>
+
+
+<div class="product-actions">
+
+    <button id="addToCart" class="cart-button">
+        Add to Cart
+    </button>
+
+    <button id="buyNow" class="buy-button">
+        Buy Now
+    </button>
+
+    <button id="saveLater" class="save-button">
+        Save for Later
+    </button>
+
+</div>
+
+
+<p id="actionMessage" class="action-message"></p>
+
+
+<a href="../review system/reviewsystem 1.html" class="review-button">
+    Write a Review
+</a>
+
+<a href="catalogue.html" class="back-button">
+    ← Back to Catalogue
+</a>
+        </div>
+
+    </main>
+
+
+    <script src="product.js"></script>
+<script src="../Theme/theme.js"></script>
+</body>
+</html>
