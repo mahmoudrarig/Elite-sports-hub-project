@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Portfolio</title>
+    <style>
+        /* BASE & RESET STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        :root {
+            --primary: #a855f7;          /* Vibrant modern purple */
+            --primary-hover: #9333ea;    /* Deeper purple for interactions */
+            --bg-dark: #0f172a;          /* Rich deep slate dark background */
+            --card-bg: #1e293b;          /* Dark card surface background */
+            --card-border: #334155;      /* Subtle border color */
+            --text-main: #f8fafc;        /* High-contrast light text */
+            --text-muted: #94a3b8;      /* Muted secondary text */
+            --purple-glow: rgba(168, 85, 247, 0.15);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAV BAR */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        /* INTERACTIVE BOX */
+        .nav-box {
+            background-color: #1a2234;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 8px 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-box:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--purple-glow);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: rgba(168, 85, 247, 0.1);
+        }
+
+        .btn-contact {
+            background-color: var(--primary) !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            box-shadow: 0 2px 8px rgba(168, 85, 247, 0.4);
+        }
+
+        .btn-contact:hover {
+            background-color: var(--primary-hover) !important;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: radial-gradient(circle at top left, #2e1065 0%, var(--bg-dark) 70%);
+            color: white;
+            padding: 90px 0;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-light {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-light:hover {
+            background: var(--primary-hover);
+            box-shadow: 0 0 15px var(--purple-glow);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            background-color: var(--card-bg);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            object-fit: cover;
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+        }
+
+        /* SECTION HEADINGS */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        /* ABOUT ME SECTION */
+        .about-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .flag-img {
+            width: 45px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .about-header-text h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .about-header-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .story-text p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .fun-fact-box {
+            background-color: rgba(168, 85, 247, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+            color: var(--text-main);
+        }
+
+        .fun-fact-box strong {
+            color: var(--primary);
+        }
+
+        .info-list {
+            list-style: none;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+        }
+
+        .info-list li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .info-list strong {
+            color: var(--text-main);
+            display: inline-block;
+            width: 100px;
+        }
+
+        /* ACADEMIC HISTORY SECTION */
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .school-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .school-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .school-logo {
+            max-height: 50px;
+            max-width: 150px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        .school-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .school-degree {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .school-year {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* ACHIEVEMENTS & LEADERSHIP SECTION */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .achievement-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 10px var(--purple-glow);
+        }
+
+        .achievement-content h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .achievement-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* SKILLS SECTION */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: var(--card-bg);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* CONTACT & FOOTER */
+        .contact-section {
+            background: linear-gradient(135deg, #2e1065 0%, #581c87 100%);
+            color: white;
+            padding: 50px 0;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            box-shadow: 0 0 30px rgba(88, 28, 135, 0.4);
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .contact-info-card {
+            background: var(--bg-dark);
+            color: var(--text-main);
+            padding: 25px;
+            border-radius: 8px;
+            min-width: 300px;
+            border: 1px solid var(--card-border);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .hero-content, .about-grid, .contact-container {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-box {
+                padding: 4px 8px;
+            }
+            .nav-links {
+                gap: 5px;
+            }
+            .nav-links a {
+                font-size: 0.85rem;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <div class="container nav">
+            <div class="logo">Misba<span>huddin</span></div>
+            
+            <div class="nav-box">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#academic">Academic History</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact" class="btn-contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-subtitle">Cybersecurity Student</div>
+                <h1 class="hero-title">Hi, I'm Misbahuddin.<br>This is my Portfolio</h1>
+                <p class="hero-desc">I am passionate about cybersecurity and software development. I enjoy learning new technologies and applying them to practical projects.</p>
+                <div class="hero-buttons">
+                    <a href="resume.pdf" class="btn btn-light" download>Download CV</a>
+                    <a href="#about" class="btn btn-outline">About Me</a>
+                </div>
+            </div>
+            <img src="c:\Users\Aviram\Downloads\Misbahuddin.jpeg" alt="Your Profile Picture" class="hero-image">
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="section container">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Driven by Curiosity and Passion.</h2>
+
+        <div class="about-card">
+            <div class="about-header">
+                <img src="c:\Users\Aviram\Downloads\flag.png" alt="Country Flag" class="flag-img">
+                <div class="about-header-text">
+                    <h3>Misbahuddin</h3>
+                    <p>Cybersecurity Student</p>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="story-text">
+                    <h4 style="margin-bottom: 10px; color: #fff;">My Story</h4>
+                    <p>I am a Cybersecurity student with a strong interest in protecting digital assets and identifying vulnerabilities. I enjoy learning new technologies and applying them to practical projects.</p>
+                    <p>I am a dedicated team player who enjoys taking on new challenges, working with others, and contributing to meaningful projects.</p>
+                    
+                    <div class="fun-fact-box">
+                        <strong>Fun Fact:</strong> When I'm not coding, I love playing football and games. I have represented my high school and Sunway for football competitions, and I also enjoy gaming in my free time. Other than that, I also love watching videos about historical events and learning about the past.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <ul class="info-list">
+                        <li><strong>Name:</strong> Misbahuddin</li>
+                        <li><strong>Nationality:</strong> Thailand</li>
+                        <li><strong>Hobbies:</strong> Coding, Sports, Gaming</li>
+                        <li><strong>Email:</strong> misbahuddinmisbah12@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACADEMIC HISTORY SECTION -->
+    <section id="academic" class="section container">
+        <div class="section-label">Education</div>
+        <h2 class="section-title">My Academic History.</h2>
+
+        <div class="academic-grid">
+            <div class="school-card">
+                <img src="c:\Users\Aviram\Downloads\SunU.png" alt="School Logo" class="school-logo">
+                <div>
+                    <div class="school-name">Sunway University</div>
+                    <div class="school-degree">Bachelor of Science (Hons) in Information Technology</div>
+                </div>
+                <div class="school-year">2026 – Present</div>
+            </div>
+
+            <div class="school-card">
+                <img src="c:\Users\Aviram\Downloads\SunCollege.png" alt="School Logo" class="school-logo">
+                <div>
+                    <div class="school-name">Sunway College</div>
+                    <div class="school-degree">Bachelor of Science (Hons) in Information Technology</div>
+                </div>
+                <div class="school-year">2024 – 2025</div>
+            </div>
+
+            <div class="school-card">
+                <img src="c:\Users\Aviram\Downloads\BSL.png" alt="School Logo" class="school-logo">
+                <div>
+                    <div class="school-name">Beaconhouse Sri Lethia</div>
+                    <div class="school-degree">SPM</div>
+                </div>
+                <div class="school-year">2017 – 2024</div>
+            </div>
+
+            <div class="school-card">
+                <img src="c:\Users\Aviram\Downloads\SKBU.png" alt="School Logo" class="school-logo">
+                <div>
+                    <div class="school-name">SK Batu Unjur</div>
+                    <div class="school-degree">Junior School</div>
+                </div>
+                <div class="school-year">2013 – 2017</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS & LEADERSHIP SECTION -->
+    <section id="achievements" class="section container">
+        <div class="section-label">Achievements & Leadership</div>
+        <h2 class="section-title">Experience beyond the classroom.</h2>
+
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon">&#10003;</div>
+                <div class="achievement-content">
+                    <h3>Leadership & Responsibilities</h3>
+                    <p>Captain for High School Football Team &bull; Secretary for Sunway Futsal Club &bull; Secretary for Beaconhouse Sri Lethia Interact Club &bull; Captain & Vice Captain for Beaconhouse Sri Lethia Sports House.</p>
+                </div>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-icon">&#10003;</div>
+                <div class="achievement-content">
+                    <h3>Sports Accolades</h3>
+                    <p>2x Triple Alliance Games Winner &bull; Beaconhouse Sri Lethia Cross Country Gold Medalist &bull; Multiple Football League Achievements.</p>
+                </div>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-icon">&#10003;</div>
+                <div class="achievement-content">
+                    <h3>Academic Honors</h3>
+                    <p>Awarded Pendidikan Islam Top Student for outstanding academic excellence and dedication.</p>
+                </div>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-icon">&#10003;</div>
+                <div class="achievement-content">
+                    <h3>A Helping Hand</h3>
+                    <p>Active volunteer and community support contributor through student clubs and leadership initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="skills" class="section container">
+        <div class="section-label">Technical Skills</div>
+        <h2 class="section-title">Technologies I work with.</h2>
+
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>HTML / CSS</span>
+                    <span>90%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>JavaScript</span>
+                    <span>75%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>Python</span>
+                    <span>80%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>SQL</span>
+                    <span>70%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="container">
+        <div class="contact-section">
+            <div class="contact-container">
+                <div>
+                    <div class="section-label" style="color: #c084fc;">Contact Me</div>
+                    <h2 style="font-size: 2.2rem; margin-top: 5px;">Let's build something together.</h2>
+                </div>
+                <div class="contact-info-card">
+                    <p style="margin-bottom: 10px;"><strong>Email:</strong> misbahuddinmisbah12@gmail.com</p>
+                    <p style="margin-bottom: 10px;"><strong>LinkedIn:</strong> linkedin.com/in/misbah-huddin</p>
+                    <p><strong>Phone:</strong> +60 10-659 6786</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Misbahuddin. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
