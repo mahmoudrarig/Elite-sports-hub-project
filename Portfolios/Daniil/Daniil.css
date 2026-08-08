@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: white;
+}
+
+
+/* HEADER */
+
+.navbar {
+    background-color: #1454c4;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.navLinks a:hover {
+    text-decoration: underline;
+}
+
+
+/* GENERAL */
+
+section {
+    padding: 50px 8%;
+}
+
+h2 {
+    color: #1454c4;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #1454c4;
+}
+
+
+/* HOME */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 450px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.small-heading {
+    color: #1454c4;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.hero-description {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.profile-image img {
+    width: 280px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #1454c4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0d3e96;
+}
+
+
+/* ABOUT */
+
+.about-content {
+    display: flex;
+    gap: 70px;
+}
+
+.about-story {
+    flex: 2;
+}
+
+.personal-info {
+    flex: 1;
+}
+
+.about-story p {
+    line-height: 1.7;
+}
+
+.personal-info p {
+    line-height: 1.6;
+}
+
+.personal-info a {
+    color: #1454c4;
+    text-decoration: none;
+}
+
+.personal-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* EDUCATION */
+
+.education-content {
+    display: flex;
+    gap: 80px;
+}
+
+.university {
+    flex: 1;
+}
+
+.university img {
+    width: 160px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.university h3 {
+    margin-top: 10px;
+}
+
+
+/* SKILLS */
+
+.skills-list {
+    line-height: 2;
+    font-size: 17px;
+}
+
+
+/* PERSONAL QUALITIES */
+
+.qualities-list {
+    line-height: 1.7;
+}
+
+.qualities-list li {
+    margin-bottom: 15px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #1454c4;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navLinks {
+        text-align: center;
+    }
+
+    .navLinks a {
+        margin: 5px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin-top: 30px;
+    }
+
+    .about-content,
+    .education-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+}
