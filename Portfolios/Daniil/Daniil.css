@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #222;
-    background: white;
+    background: #f5f5f5;
 }
 
 
@@ -53,10 +53,12 @@ h3 {
 /* HOME */
 
 .hero {
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 450px;
+    min-height: 430px;
+    gap: 50px;
 }
 
 .hero-text {
@@ -82,7 +84,7 @@ h3 {
     width: 280px;
     height: 330px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .button {
@@ -104,7 +106,15 @@ h3 {
 
 .about-content {
     display: flex;
-    gap: 70px;
+    gap: 40px;
+}
+
+.about-story,
+.personal-info {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .about-story {
@@ -137,11 +147,15 @@ h3 {
 
 .education-content {
     display: flex;
-    gap: 80px;
+    gap: 30px;
 }
 
 .university {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
     flex: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .university img {
@@ -158,19 +172,55 @@ h3 {
 /* SKILLS */
 
 .skills-list {
-    line-height: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.skills-list p {
+    background-color: white;
+    padding: 18px;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     font-size: 17px;
+}
+
+.skills-list strong {
+    color: #1454c4;
 }
 
 
 /* PERSONAL QUALITIES */
 
 .qualities-list {
-    line-height: 1.7;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.quality {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.qualities-list ul {
+    display: contents;
 }
 
 .qualities-list li {
-    margin-bottom: 15px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    line-height: 1.6;
+    list-style-position: inside;
+}
+
+.qualities-list strong {
+    color: #1454c4;
 }
 
 
@@ -215,7 +265,10 @@ footer {
     .about-content,
     .education-content {
         flex-direction: column;
-        gap: 30px;
     }
 
+    .skills-list,
+    .qualities-list {
+        grid-template-columns: 1fr;
+    }
 }
