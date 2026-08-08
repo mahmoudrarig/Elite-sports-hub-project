@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Product Review</title>
+  <link rel="stylesheet" href="reviewsystem.css">
+</head>
+<body>
+  <header>
+    <h1>Change the name of this later</h1>
+    <p> What do you think of this product?</p>
+  </header>
+  <div class="container">
+    <section class="review-panel">
+      <div class="review-layout">
+        <div class="product-details">
+          <button type="button" class="product-image-button" id="openImageModal" aria-label="Open a larger product image">
+            <!-- Replace the src below with the product image supplied by the main product page. -->
+            <img class="product-image" id="productImage" src="https://placehold.co/700x450/e8eef7/1a73e8?text=Product+Image" alt="Product image">
+            <span class="image-hint">Click image to enlarge</span>
+          </button>
+        </div>
+        <div class="review-content">
+          <h2> Drop Some Stars! </h2>
+          <p class="review-intro">How was your experience with this product?</p>
+          <form id="reviewForm">
+            <label id="ratingLabel">Your rating</label>
+            <div class="star-rating" role="radiogroup" aria-labelledby="ratingLabel">
+              <input type="radio" id="star5" name="rating" value="5" required><label for="star5" title="Excellent">&#9733;</label>
+              <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="Very good">&#9733;</label>
+              <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="Good">&#9733;</label>
+              <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="Fair">&#9733;</label>
+              <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="Poor">&#9733;</label>
+            </div>
+            <p class="rating-message" id="ratingMessage"> 5 stars looks nice </p>
+
+            <label for="review">Your Opinion Matters! </label>
+            <textarea id="review" name="review" placeholder="Tell other customers what you liked or disliked..." required></textarea>
+
+            <button type="submit" class="submit-review">Submit Review</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2>Customer Reviews</h2>
+      <div id="reviewList" class="empty-state">Be our first reviewer! It's really empty out here, Sahara Desert....</div>
+    </section>
+  </div>
+
+  <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button type="button" class="modal-close" id="closeImageModal" aria-label="Close image popup">&times;</button>
+      <h2 id="modalTitle">Product Image</h2>
+      <img id="modalImage" src="https://placehold.co/700x450/e8eef7/1a73e8?text=Product+Image" alt="Large product image">
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('reviewForm');
+    const reviewList = document.getElementById('reviewList');
+    const ratingInputs = document.querySelectorAll('input[name="rating"]');
+    const ratingMessage = document.getElementById('ratingMessage');
+    const productImage = document.getElementById('productImage');
+    const modalImage = document.getElementById('modalImage');
+    const imageModal = document.getElementById('imageModal');
+    const openImageModal = document.getElementById('openImageModal');
+    const closeImageModal = document.getElementById('closeImageModal');
+
+    ratingInputs.forEach(input => input.addEventListener('change', () => {
+      ratingMessage.textContent = `${input.value} out of 5 stars selected`;
+    }));
+
+    function showModal() {
+      modalImage.src = productImage.src;
+      imageModal.classList.add('open');
+      closeImageModal.focus();
+    }
+    function hideModal() { imageModal.classList.remove('open'); openImageModal.focus(); }
+    openImageModal.addEventListener('click', showModal);
+    closeImageModal.addEventListener('click', hideModal);
+    imageModal.addEventListener('click', event => { if (event.target === imageModal) hideModal(); });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && imageModal.classList.contains('open')) hideModal();
+    });
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const selectedRating = document.querySelector('input[name="rating"]:checked');
+      const rating = selectedRating ? selectedRating.value : '';
+      const reviewText = document.getElementById('review').value.trim();
+
+      if (!rating || !reviewText) {
+        return;
+      }
+
+      const reviewItem = document.createElement('div');
+      reviewItem.className = 'review-item';
+      const meta = document.createElement('div');
+      meta.className = 'review-meta';
+      const author = document.createElement('strong');
+      author.textContent = 'Customer';
+      const ratingDisplay = document.createElement('span');
+      ratingDisplay.className = 'rating';
+      ratingDisplay.textContent = `${'\u2605'.repeat(Number(rating))}${'\u2606'.repeat(5 - Number(rating))} ${rating}/5`;
+      const reviewBody = document.createElement('p');
+      reviewBody.textContent = reviewText;
+      reviewBody.style.whiteSpace = 'pre-wrap';
+      meta.append(author, ratingDisplay);
+      reviewItem.append(meta, reviewBody);
+
+      if (reviewList.classList.contains('empty-state')) {
+        reviewList.classList.remove('empty-state');
+        reviewList.innerHTML = '';
+      }
+
+      reviewList.prepend(reviewItem);
+      form.reset();
+      ratingMessage.textContent = 'Select a star rating';
+    });
+  </script>
+</body>
+</html>
