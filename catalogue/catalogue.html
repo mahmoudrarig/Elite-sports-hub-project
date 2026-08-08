@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catalogue</title>
+
+    <link rel="stylesheet" href="catalogue.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>Elite<span class="blue">Sports</span></span>
+        </div>
+
+        <nav class="navLinks">
+            <a href="../Home Page/Home.html">Home</a>
+            <a href="../About Page/About.html">About</a>
+            <a href="../catalogue/catalogue.html">Catalogue</a>
+            <a href="../review system/reviewsystem 1.html">Reviews</a>
+            <a href="../team view/team.html">Team</a>
+        </nav>
+
+        <a href="../login/Login.html" class="button1">Login</a>
+
+    </header>
+
+
+    <div class="container">
+
+        <h1>Sports Catalogue</h1>
+
+        <input
+            class="search"
+            id="search"
+            type="text"
+            placeholder="Search products..."
+        >
+
+        <select id="filter">
+            <option value="All">All Categories</option>
+            <option value="Ball">Ball</option>
+            <option value="Footwear">Footwear</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Gear">Gear</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Tennis">Tennis</option>
+        </select>
+
+
+        <div class="grid" id="products">
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        © 2026 Elite Sports Hub
+    </footer>
+
+
+    <script src="catalogue.js"></script>
+
+</body>
+
+</html>
