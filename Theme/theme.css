@@ -1,0 +1,273 @@
+/* THEME BUTTON */
+
+.theme-toggle-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+
+    padding: 10px 16px;
+
+    border: 1px solid lightgray;
+    border-radius: 20px;
+
+    background-color: white;
+    color: #111;
+
+    cursor: pointer;
+}
+
+
+/* DARK THEME */
+
+body.dark-theme {
+    background-color: #111827 !important;
+    color: white !important;
+}
+
+
+/* MAIN AREAS */
+
+body.dark-theme main,
+body.dark-theme section,
+body.dark-theme .container {
+    background-color: #111827 !important;
+    color: white !important;
+}
+
+
+/* NAVBAR */
+
+body.dark-theme header,
+body.dark-theme .navbar {
+    background-color: #1f2937 !important;
+    color: white !important;
+    border-color: #374151 !important;
+}
+
+body.dark-theme nav a,
+body.dark-theme .navLinks a,
+body.dark-theme .navlinks a {
+    color: white !important;
+}
+
+
+/* TEXT */
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4 {
+    color: white !important;
+}
+
+body.dark-theme p {
+    color: #d1d5db;
+}
+
+
+/* CARDS */
+
+body.dark-theme .card,
+body.dark-theme .product-card,
+body.dark-theme .stat-card,
+body.dark-theme .achievement-card,
+body.dark-theme .achievement,
+body.dark-theme .education-card,
+body.dark-theme .project-card,
+body.dark-theme .auth-card,
+body.dark-theme .review-panel,
+body.dark-theme .review-item,
+body.dark-theme .category-card,
+body.dark-theme .cart-item,
+body.dark-theme .saved-item,
+body.dark-theme .saved-card,
+body.dark-theme .cart-card,
+body.dark-theme .summary-card,
+body.dark-theme .order-summary,
+body.dark-theme .cart-summary {
+    background-color: #1f2937 !important;
+    color: white !important;
+    border-color: #374151 !important;
+}
+
+
+/* CARD CONTENT */
+
+body.dark-theme .product-info,
+body.dark-theme .info,
+body.dark-theme .project-info {
+    background-color: #1f2937 !important;
+    color: white !important;
+}
+
+
+/* CARD HEADINGS */
+
+body.dark-theme .card h3,
+body.dark-theme .category-card h3,
+body.dark-theme .cart-item h2,
+body.dark-theme .cart-item h3,
+body.dark-theme .saved-item h2,
+body.dark-theme .saved-item h3,
+body.dark-theme .saved-card h2,
+body.dark-theme .saved-card h3,
+body.dark-theme .cart-card h2,
+body.dark-theme .cart-card h3,
+body.dark-theme .summary-card h2,
+body.dark-theme .order-summary h2,
+body.dark-theme .cart-summary h2 {
+    color: white !important;
+}
+
+
+/* CARD PARAGRAPHS */
+
+body.dark-theme .card p,
+body.dark-theme .category-card p,
+body.dark-theme .cart-item p,
+body.dark-theme .saved-item p,
+body.dark-theme .saved-card p,
+body.dark-theme .cart-card p,
+body.dark-theme .summary-card p,
+body.dark-theme .order-summary p,
+body.dark-theme .cart-summary p {
+    color: #d1d5db !important;
+}
+
+
+/* PRICES AND TOTALS */
+
+body.dark-theme .price,
+body.dark-theme .order-summary strong,
+body.dark-theme .order-summary span,
+body.dark-theme .summary-card strong,
+body.dark-theme .summary-card span,
+body.dark-theme .cart-summary strong,
+body.dark-theme .cart-summary span {
+    color: white !important;
+}
+
+
+/* ABOUT PAGE STATS */
+
+body.dark-theme .stat-card {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+    color: white !important;
+}
+
+body.dark-theme .stat-card h2 {
+    color: #4f8cff !important;
+}
+
+body.dark-theme .stat-card p {
+    color: #d1d5db !important;
+}
+
+body.dark-theme .achievement,
+body.dark-theme .achievement-card {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+    color: white !important;
+}
+
+body.dark-theme .achievement p,
+body.dark-theme .achievement-card p {
+    color: white !important;
+}
+
+
+/* CATEGORY HOVER */
+
+body.dark-theme .category-card:hover {
+    background-color: #263449 !important;
+    border-color: #1454c4 !important;
+}
+
+
+/* FORMS */
+
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+    background-color: #374151 !important;
+    color: white !important;
+    border-color: #4b5563 !important;
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+    color: #cbd5e1;
+}
+
+
+/* FOOTER */
+
+body.dark-theme footer,
+body.dark-theme .footer,
+body.dark-theme .footer-container,
+body.dark-theme .footer-content,
+body.dark-theme .footer-bottom {
+    background-color: #1f2937 !important;
+    color: white !important;
+    border-color: #374151 !important;
+}
+
+body.dark-theme footer a,
+body.dark-theme footer p,
+body.dark-theme .footer a,
+body.dark-theme .footer p {
+    color: #d1d5db !important;
+}
+
+
+/* THEME BUTTON IN DARK MODE */
+
+body.dark-theme .theme-toggle-btn {
+    background-color: #374151 !important;
+    color: white !important;
+    border-color: #4b5563 !important;
+}
+
+
+/* REVIEW HISTORY NAVBAR */
+
+body.dark-theme .top-navigation {
+    background-color: #1f2937 !important;
+    border-bottom-color: #374151 !important;
+}
+
+body.dark-theme .nav-brand {
+    color: white !important;
+}
+
+body.dark-theme .nav-brand span {
+    color: #4f8cff !important;
+}
+
+
+/* LOGIN PAGE */
+
+body.dark-theme .auth-wrapper {
+    background-color: #111827 !important;
+}
+
+body.dark-theme .auth-card {
+    background-color: #1f2937 !important;
+    color: white !important;
+    border-color: #374151 !important;
+}
+
+body.dark-theme .auth-tabs {
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+}
+
+body.dark-theme .form-group label {
+    color: white !important;
+}
+
+
+/* TEAM PAGE
+*/
