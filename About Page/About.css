@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #111;
+}
+
+.logo .blue {
+    color: #1454c4;
+}
+
+.navlinks {
+    display: flex;
+    gap: 20px;
+}
+
+.navlinks a {
+    padding: 10px 14px;
+    color: #333;
+    border-radius: 7px;
+}
+
+.navlinks a:hover,
+.navlinks .active {
+    background-color: #eaf1ff;
+    color: #1454c4;
+}
+
+.login-btn {
+    padding: 10px 20px;
+    background-color: #1454c4;
+    color: white;
+    border-radius: 7px;
+}
+
+
+/* ABOUT HERO */
+
+.about-hero {
+    min-height: 240px;
+    padding: 50px 5% 70px;
+    background-color: #1454c4;
+    color: white;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.small-title {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.about-hero h1 {
+    margin: 0 0 15px;
+    font-size: 50px;
+}
+
+.hero-content > p:last-child {
+    max-width: 700px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #eeeeee;
+}
+
+
+/* HISTORY, MISSION, VISION */
+
+.about-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    padding: 75px 5%;
+    border-bottom: 1px solid lightgray;
+}
+
+.about-info h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.about-info p {
+    color: #444;
+    line-height: 1.7;
+}
+
+.mission-vision {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 45px 5%;
+    background-color: #fafafa;
+    border-bottom: 1px solid lightgray;
+}
+
+.stat-box {
+    padding: 28px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 18px;
+}
+
+.stat-box h2 {
+    margin: 0;
+    color: #1454c4;
+    font-size: 34px;
+}
+
+.stat-box p {
+    margin: 7px 0 0;
+    color: #555;
+}
+ body.dark-theme .stat-box h2 {
+    color: #4f8cff !important;
+}
+
+body.dark-theme .stat-box p {
+    color: #d1d5db !important;
+}
+
+
+/* ACHIEVEMENTS */
+
+.achievements {
+    padding: 70px 5%;
+}
+
+.achievements h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 38px;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+    border: 1px solid lightgray;
+    border-radius: 16px;
+    background-color: white;
+}
+
+.achievement span {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1454c4;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.achievement p {
+    margin: 0;
+    font-size: 18px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #f7f7f7;
+    border-top: 1px solid lightgray;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 55px 5%;
+}
+
+.footer-about h2,
+.footer-links h3,
+.footer-contact h3,
+.footer-follow h3 {
+    margin-top: 0;
+}
+
+.footer-about .blue {
+    color: #1454c4;
+}
+
+.footer-about p,
+.footer-links a,
+.footer-contact p,
+.footer-follow p {
+    color: #555;
+    line-height: 1.8;
+}
+
+.footer-links a {
+    display: block;
+}
+
+.footer-links a:hover {
+    color: #1454c4;
+}
+
+.copyright {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid lightgray;
+    color: #666;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .about-info {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navlinks {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about-hero h1 {
+        font-size: 38px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
