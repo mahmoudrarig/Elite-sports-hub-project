@@ -5,9 +5,6 @@ body {
     background: #f5f5f5;
 }
 
-
-/* HEADER */
-
 .navbar {
     background-color: #1454c4;
     color: white;
@@ -33,9 +30,6 @@ body {
     text-decoration: underline;
 }
 
-
-/* GENERAL */
-
 section {
     padding: 50px 8%;
 }
@@ -48,9 +42,6 @@ h2 {
 h3 {
     color: #1454c4;
 }
-
-
-/* HOME */
 
 .hero {
     background-color: white;
@@ -101,9 +92,6 @@ h3 {
     background-color: #0d3e96;
 }
 
-
-/* ABOUT */
-
 .about-content {
     display: flex;
     gap: 40px;
@@ -134,16 +122,19 @@ h3 {
 }
 
 .personal-info a {
+    display: block;
     color: #1454c4;
     text-decoration: none;
+    margin-top: 5px;
 }
 
 .personal-info a:hover {
     text-decoration: underline;
 }
 
-
-/* EDUCATION */
+.contact-item {
+    margin-bottom: 20px;
+}
 
 .education-content {
     display: flex;
@@ -168,30 +159,26 @@ h3 {
     margin-top: 10px;
 }
 
-
-/* SKILLS */
-
 .skills-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 20px;
 }
 
-.skills-list p {
+.skill {
     background-color: white;
-    padding: 18px;
-    margin: 0;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    font-size: 17px;
 }
 
-.skills-list strong {
-    color: #1454c4;
+.skill h3 {
+    margin-top: 0;
 }
 
-
-/* PERSONAL QUALITIES */
+.skill p {
+    line-height: 1.6;
+}
 
 .qualities-list {
     display: grid;
@@ -206,25 +193,13 @@ h3 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.qualities-list ul {
-    display: contents;
+.quality h3 {
+    margin-top: 0;
 }
 
-.qualities-list li {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.quality p {
     line-height: 1.6;
-    list-style-position: inside;
 }
-
-.qualities-list strong {
-    color: #1454c4;
-}
-
-
-/* FOOTER */
 
 footer {
     background-color: #1454c4;
@@ -234,11 +209,7 @@ footer {
     margin-top: 30px;
 }
 
-
-/* MOBILE */
-
 @media (max-width: 700px) {
-
     .navbar {
         flex-direction: column;
         gap: 15px;
