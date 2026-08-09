@@ -21,15 +21,14 @@
   --logo-panel: #fff;
 }
 
-/* Dark mode colours */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
+/* Theme toggle colours */
+body.dark-theme {
+  color-scheme: dark;
     --ink: #f3f2ee;
-    --paper: #0b0b0a;
+    --paper: #000;
     --muted: #b0b0aa;
-    --line: #343431;
-    --surface: #171715;
+    --line: #333330;
+    --surface: #10100f;
     --surface-line: #41413d;
     --bar-track: #343430;
     --subtle: #999992;
@@ -42,7 +41,32 @@
     --footer-muted: #a7a7a1;
     --accent: #b5b5ae;
     --logo-panel: #fff;
-  }
+}
+
+/* Matches the shared theme control used throughout the site. */
+.theme-toggle-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  font: 700 0.75rem/1 Arial, Helvetica, sans-serif;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus-visible {
+  border-color: var(--ink);
+}
+
+.theme-toggle-btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
 }
 
 /* Basic page setup */
@@ -802,28 +826,4 @@ footer a:focus-visible {
   html {
     scroll-behavior: auto;
   }
-}
-.back-team {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 9px 14px;
-    border: 1px solid #3b82f6;
-    border-radius: 7px;
-    transition: 0.3s ease;
-}
-
-.back-team:hover {
-    background-color: #3b82f6;
-    color: white;
-    transform: translateX(-2px);
-}
-body.light-theme .back-team {
-    color: #111827;
-    border-color: #2563eb;
-}
-
-body.light-theme .back-team:hover {
-    background-color: #2563eb;
-    color: white;
 }
