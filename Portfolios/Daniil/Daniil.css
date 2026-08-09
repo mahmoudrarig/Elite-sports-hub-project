@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f5f5f5;
+}
+
+.navbar {
+    background-color: #1454c4;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.navLinks a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 50px 8%;
+}
+
+h2 {
+    color: #1454c4;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #1454c4;
+}
+
+.hero {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 430px;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.small-heading {
+    color: #1454c4;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.hero-description {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.profile-image img {
+    width: 280px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #1454c4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0d3e96;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+}
+
+.about-story,
+.personal-info {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-story {
+    flex: 2;
+}
+
+.personal-info {
+    flex: 1;
+}
+
+.about-story p {
+    line-height: 1.7;
+}
+
+.personal-info p {
+    line-height: 1.6;
+}
+
+.personal-info a {
+    display: block;
+    color: #1454c4;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.personal-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.education-content {
+    display: flex;
+    gap: 30px;
+}
+
+.university {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.university img {
+    width: 160px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.university h3 {
+    margin-top: 10px;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skill {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.skill h3 {
+    margin-top: 0;
+}
+
+.skill p {
+    line-height: 1.6;
+}
+
+.qualities-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.quality {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.quality h3 {
+    margin-top: 0;
+}
+
+.quality p {
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #1454c4;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navLinks {
+        text-align: center;
+    }
+
+    .navLinks a {
+        margin: 5px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin-top: 30px;
+    }
+
+    .about-content,
+    .education-content {
+        flex-direction: column;
+    }
+
+    .skills-list,
+    .qualities-list {
+        grid-template-columns: 1fr;
+    }
+}
+.back-team {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 14px;
+    border: 1px solid #3b82f6;
+    border-radius: 7px;
+    transition: 0.3s ease;
+}
+
+.back-team:hover {
+    background-color: #3b82f6;
+    color: white;
+    transform: translateX(-2px);
+}
+body.light-theme .back-team {
+    color: #111827;
+    border-color: #2563eb;
+}
+
+body.light-theme .back-team:hover {
+    background-color: #2563eb;
+    color: white;
+}
