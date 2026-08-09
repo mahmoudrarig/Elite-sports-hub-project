@@ -359,6 +359,32 @@ body.dark-theme .team-card:nth-child(4) .portrait {
   line-height: 1.65;
 }
 
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: 18px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.portfolio-link span {
+  transition: transform 180ms ease;
+}
+
+.portfolio-link:hover span,
+.portfolio-link:focus-visible span {
+  transform: translateX(4px);
+}
+
+.portfolio-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
